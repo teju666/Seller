@@ -1,0 +1,5 @@
+/workspaces/Seller/SellerApi/Seller.Core/obj/Debug/net8.0/Seller.Core.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/Seller/SellerApi/Seller.Core/obj/Debug/net8.0/Seller.Core.AssemblyInfoInputs.cache
+/workspaces/Seller/SellerApi/Seller.Core/obj/Debug/net8.0/Seller.Core.AssemblyInfo.cs
+/workspaces/Seller/SellerApi/Seller.Core/obj/Debug/net8.0/Seller.Core.csproj.CoreCompileInputs.cache
+/workspaces/Seller/SellerApi/Seller.Core/obj/Debug/net8.0/Seller.Core.sourcelink.json
