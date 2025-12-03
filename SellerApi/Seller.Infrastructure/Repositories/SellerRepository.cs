@@ -1,11 +1,11 @@
-using Seller.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Seller.Core.Entities;
 using Seller.Core.Interfaces;
 using Seller.Infrastructure.Data;
  
 namespace Seller.Infrastructure.Repositories;
  
-public class SellerRepository : IProductRepository
+public class SellerRepository : ISellerRepository
 {
     private readonly AppDbContext _db;
     public SellerRepository(AppDbContext db) => _db = db;
@@ -44,21 +44,23 @@ public class SellerRepository : IProductRepository
  
     public async Task UpdateAsync(Seller seller, CancellationToken ct = default)
     {
-        _db.Seller.Update(product);
+        _db.Seller.Update(seller);
         await _db.SaveChangesAsync(ct);
     }
  
-    public async Task DeleteAsync(Seller Seller, bool softDelete = false, CancellationToken ct = default)
+    public async Task DeleteAsync(Seller seller, bool softDelete = false, CancellationToken ct = default)
     {
         if (softDelete)
         {
-            Seller.IsDeleted = true;
-            _db.Seller.Update(Seller);
+            seller.IsDeleted = true;
+            _db.Seller.Update(seller);
         }
         else
         {
-            _db.Seller.Remove(Seller);
+            _db.Seller.Remove(seller);
         }
         await _db.SaveChangesAsync(ct);
     }
 }
+ 
+ 
